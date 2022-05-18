@@ -8,22 +8,17 @@ public class Deck
 
    public Deck()
    {
-     cards = new ArrayList<Card>();
-
-     for (Card.Face face: Card.Face.values())
-     {
-         cards.add(new Card(face, Card.Suite.SPADES));
-         cards.add(new Card(face, Card.Suite.HEARTS));
-         cards.add(new Card(face, Card.Suite.CLUBS));
-         cards.add(new Card(face, Card.Suite.DIAMONDS));
-     }
-
-     randomizer = new Random();
+       cards = new ArrayList<Card>();
+       for (Card.Face face: Card.Face.values())
+       {
+           cards.add(new Card(face, Card.Suite.SPADES));
+           cards.add(new Card(face, Card.Suite.HEARTS));
+           cards.add(new Card(face, Card.Suite.CLUBS));
+           cards.add(new Card(face, Card.Suite.DIAMONDS));
+       }
+       randomizer = new Random();
    }
 
-   /**
-    * Shuffles the deck in random order 
-    */
    public void shuffle()
    {
        for (int i = 0; i < cards.size(); i++)
@@ -35,15 +30,9 @@ public class Deck
        }
    }
 
-   /**
-    * Retrieves the top card from the deck, removing it from the deck
-    * @param p the player who gets one card from the top of the deck
-    * @return the top Card from the deck
-    */
    public Card getTopCard()
    {
        Card c = cards.remove(cards.size()-1);
        return c;
    }
-
 }
