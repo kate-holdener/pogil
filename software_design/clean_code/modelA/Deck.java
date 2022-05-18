@@ -34,7 +34,7 @@ public void rand()
    }
 
 
-   public Card top()
+   public Card card()
    {
        Card c = x.remove(x.size()-1);
    return c;
