@@ -4,7 +4,7 @@ import java.util.Random;
 public class Deck
 {
    private ArrayList<Card> x;
-   Random y;
+   private Random y;
 
 public void rand()
 {
