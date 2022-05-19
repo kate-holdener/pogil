@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 import java.util.Random;
-
 public class Deck
 {
    private ArrayList<Card> x;
    private Random y;
-
 public void rand()
 {
     for (int i = 0; i < x.size(); i++)
@@ -16,6 +14,15 @@ public void rand()
         x.set(swap_with, a);
     }
 }
+
+
+
+
+
+
+
+
+
 
 
    public Deck()
@@ -29,11 +36,8 @@ public void rand()
          x.add(new Card(face, Card.Suite.CLUBS));
          x.add(new Card(face, Card.Suite.DIAMONDS));
      }
-
-     y = new Random();
+ y = new Random();
    }
-
-
    public Card card()
    {
        Card c = x.remove(x.size()-1);
