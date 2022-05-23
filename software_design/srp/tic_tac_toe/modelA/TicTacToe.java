@@ -54,6 +54,10 @@ public class TicTacToe
       {
          winner = getColumnWinner();
       }
+      if (winner == null)
+      {
+         winner = getDiagonalWinner();
+      }
       return winner;
    }
 
@@ -98,6 +102,35 @@ public class TicTacToe
          }
       }
       return columnWinner;
+   }
+
+   private TicTacToePiece getDiagonalWinner()
+   {
+      TicTacToePiece diagonalWinner = this.pieces[0][0];
+     
+      // check the top left to bottom right diagonal
+      for (int i = 0; i < this.size; i++)
+      {
+         if (this.pieces[i][i] != diagonalWinner)
+         {
+            diagonalWinner = null;
+         }
+      }
+      if (diagonalWinner != null)
+      {
+         return diagonalWinner;
+      }
+
+      // check the top right to bottom left diagonal
+      diagonalWinner = this.pieces[0][this.size-1];
+      for (int i = 0; i < this.size; i++)
+      {
+         if (this.pieces[i][this.size-1-i] != diagonalWinner)
+         {
+            diagonalWinner = null;
+         }
+      }
+      return diagonalWinner;
    }
 
    public boolean autoPlace(TicTacToePiece piece)
